@@ -66,3 +66,19 @@ Bem-vindo ao **ControleFinanceiro**, um aplicativo Android moderno e completo pa
    ```bash
 
    git clone https://github.com/seu-usuario/ControleFinanceiro.git
+
+
+
+   ---
+
+🛠️ **Software desenvolvido por Daniel Barbieri**  
+Engenheiro de Software | Full Stack Developer  
+
+Código construído com foco em eficiência, organização, escalabilidade e boas práticas de desenvolvimento.
+
+🌐 GitHub: https://github.com/DanielBarbieri21  
+💼 LinkedIn: https://www.linkedin.com/in/daniel-barbieri-4990462a/
+
+---
+
+
