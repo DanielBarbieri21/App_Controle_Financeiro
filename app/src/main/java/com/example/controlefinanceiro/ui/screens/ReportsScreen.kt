@@ -48,6 +48,11 @@ fun ReportsScreen(
 
     val saldo = totalReceitas - (totalContas + totalParcelas)
     val totalDespesas = totalContas + totalParcelas
+    
+    // Coletar dados dos ViewModels
+    val receitas by receitaViewModel.receitas.collectAsState(initial = emptyList())
+    val contas by contaViewModel.contas.collectAsState(initial = emptyList())
+    val cartoes by cartaoViewModel.cartoes.collectAsState(initial = emptyList())
 
     Scaffold(
         topBar = {
@@ -139,7 +144,6 @@ fun ReportsScreen(
                 }
                 
                 // Análise de Receitas
-                val receitas by receitaViewModel.receitas.collectAsState(initial = emptyList())
                 if (receitas.isNotEmpty()) {
                     item {
                         Text(
@@ -179,7 +183,6 @@ fun ReportsScreen(
                 }
                 
                 // Análise de Despesas
-                val contas by contaViewModel.contas.collectAsState(initial = emptyList())
                 if (contas.isNotEmpty()) {
                     item {
                         Text(
@@ -219,7 +222,6 @@ fun ReportsScreen(
                 }
                 
                 // Análise de Cartões
-                val cartoes by cartaoViewModel.cartoes.collectAsState(initial = emptyList())
                 if (cartoes.isNotEmpty()) {
                     item {
                         Text(

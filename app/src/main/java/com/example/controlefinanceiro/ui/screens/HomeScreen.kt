@@ -51,6 +51,11 @@ fun HomeScreen(
     }
 
     val saldo = totalReceitas - (totalContas + totalParcelas)
+    
+    // Coletar dados dos ViewModels
+    val receitas by receitaViewModel.receitas.collectAsState(initial = emptyList())
+    val contas by contaViewModel.contas.collectAsState(initial = emptyList())
+    val cartoes by cartaoViewModel.cartoes.collectAsState(initial = emptyList())
 
     Scaffold(
         topBar = {
@@ -100,7 +105,6 @@ fun HomeScreen(
                 }
 
                 // Lista de Receitas
-                val receitas by receitaViewModel.receitas.collectAsState(initial = emptyList())
                 if (receitas.isNotEmpty()) {
                     item {
                         Text(
@@ -122,7 +126,6 @@ fun HomeScreen(
                 }
 
                 // Lista de Contas
-                val contas by contaViewModel.contas.collectAsState(initial = emptyList())
                 if (contas.isNotEmpty()) {
                     item {
                         Text(
@@ -144,7 +147,6 @@ fun HomeScreen(
                 }
 
                 // Lista de Cartões
-                val cartoes by cartaoViewModel.cartoes.collectAsState(initial = emptyList())
                 if (cartoes.isNotEmpty()) {
                     item {
                         Text(

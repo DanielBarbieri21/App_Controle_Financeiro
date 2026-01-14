@@ -3,8 +3,9 @@ package com.example.controlefinanceiro.data.repository
 import com.example.controlefinanceiro.data.dao.ReceitaDao
 import com.example.controlefinanceiro.data.entity.Receita
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class ReceitaRepository(private val receitaDao: ReceitaDao) {
+class ReceitaRepository @Inject constructor(private val receitaDao: ReceitaDao) {
     suspend fun insert(receita: Receita) {
         receitaDao.insert(receita)
     }

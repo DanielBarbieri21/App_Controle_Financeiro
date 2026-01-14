@@ -11,10 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.controlefinanceiro.ui.theme.BlackBackground
-import com.example.controlefinanceiro.ui.theme.GreenIncome
-import com.example.controlefinanceiro.ui.theme.RedExpense
-import com.example.controlefinanceiro.ui.theme.YellowText
+import com.example.controlefinanceiro.ui.theme.*
 
 @Composable
 fun FinanceCard(
@@ -28,7 +25,7 @@ fun FinanceCard(
             .fillMaxWidth()
             .padding(8.dp),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = BlackBackground),
+        colors = CardDefaults.cardColors(containerColor = Surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Column(
@@ -39,8 +36,8 @@ fun FinanceCard(
         ) {
             Text(
                 text = title,
-                color = YellowText,
-                fontSize = 16.sp,
+                color = TextSecondary,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Medium
             )
             Spacer(modifier = Modifier.height(8.dp))
@@ -65,7 +62,7 @@ fun BalanceCard(
             .padding(16.dp),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (balance >= 0) GreenIncome.copy(alpha = 0.1f) else RedExpense.copy(alpha = 0.1f)
+            containerColor = if (balance >= 0) Primary.copy(alpha = 0.15f) else Error.copy(alpha = 0.15f)
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
@@ -77,14 +74,14 @@ fun BalanceCard(
         ) {
             Text(
                 text = "Saldo Total",
-                color = YellowText,
-                fontSize = 18.sp,
+                color = TextSecondary,
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
             Spacer(modifier = Modifier.height(12.dp))
             Text(
                 text = "R$ ${"%.2f".format(balance)}",
-                color = if (balance >= 0) GreenIncome else RedExpense,
+                color = if (balance >= 0) Primary else Error,
                 fontSize = 32.sp,
                 fontWeight = FontWeight.Bold
             )
